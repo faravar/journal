@@ -188,14 +188,7 @@ main {
   margin-bottom: 16px;
   border: 1.5px solid var(--border);
 }
-  .filter-card-f {
-  background: var(--surface);
-  border-radius: var(--radius);
-  margin-top: 5px;
-  box-shadow: var(--shadow);
-  margin-bottom: 16px;
-  border: 1.5px solid var(--border);
-}
+ 
 
 .filter-card-title {
   display: flex;
@@ -716,16 +709,23 @@ footer a:hover { color: var(--purple-mid); }
     </div>
   </div>
 
- 
+  <!-- CHART -->
+  <div class="chart-card">
+    <div class="chart-header">
+      <div class="chart-title-text">روند پیشرفت</div>
+      <div class="chart-total">
+        <div class="chart-total-label">مجموع کل</div>
+        <div class="chart-total-val" id="chartTotalVal">$0</div>
+      </div>
+    </div>
+    <canvas id="pnlChart"></canvas>
+  </div>
   <!-- FILTER -->
- 
-  
   <div class="filter-wrapper filter-card-title filter-card" onclick="toggleFilters()">
     <span>🔍 فیلتر و مرتب‌سازی</span>
     <span class="arrow-icon" id="filterArrow">▼</span>
   </div>
-
-  <div class="filter-content filter-card-f" id="filterContent">
+  <div class="filter-content filter-card" id="filterContent">
     <div class="filter-row">
       <input type="text" class="fi" id="fSymbol" placeholder="نماد — مثلاً Daw" oninput="render()">
       
@@ -752,17 +752,7 @@ footer a:hover { color: var(--purple-mid); }
   <!-- TRADES -->
   <div class="trades-wrap" id="tradesList"></div>
 
-  <!-- CHART -->
-  <div class="chart-card">
-    <div class="chart-header">
-      <div class="chart-title-text">روند پیشرفت</div>
-      <div class="chart-total">
-        <div class="chart-total-label">مجموع کل</div>
-        <div class="chart-total-val" id="chartTotalVal">$0</div>
-      </div>
-    </div>
-    <canvas id="pnlChart"></canvas>
-  </div>
+ 
 
 </main>
 
