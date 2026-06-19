@@ -597,6 +597,59 @@ footer a:hover { color: var(--purple-mid); }
   .overlay { align-items: center; padding: 20px; }
   .modal { border-radius: 28px; max-height: 88vh; }
 }
+
+  /* کانتینر کل بخش فیلتر */
+.filter-wrapper {
+  background: #ffffff;
+  border-radius: var(--radius-sm); /* استفاده از همان متغیر گوشه گرد شما */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  margin: 20px 0;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+}
+
+/* مستطیل اولیه که قرار است روی آن کلیک شود */
+.filter-header {
+  padding: 15px 20px;
+  background: #f8fafc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  font-weight: bold;
+  color: #334155;
+  transition: background 0.2s;
+}
+
+/* تغییر رنگ هدر وقتی موس روی آن می‌رود */
+.filter-header:hover {
+  background: #f1f5f9;
+}
+
+/* فلش کوچک سمت راست */
+.arrow-icon {
+  transition: transform 0.3s ease;
+  font-size: 12px;
+}
+
+/* محتوای فیلترها که در حالت عادی مخفی است */
+.filter-content {
+  display: none; /* مخفی کردن پیش‌فرض */
+  padding: 20px;
+  border-top: 1px solid #f1f5f9;
+  background: #ffffff;
+}
+
+/* این کلاس با جاوااسکریپت اضافه می‌شود تا فیلتر باز شود */
+.filter-content.active {
+  display: block;
+}
+
+/* چرخیدن فلش وقتی فیلتر باز می‌شود */
+.filter-header.active .arrow-icon {
+  transform: rotate(180deg);
+}
 </style>
 </head>
 <body>
@@ -655,6 +708,21 @@ footer a:hover { color: var(--purple-mid); }
     </div>
   </div>
 
+  <div class="filter-wrapper">
+  
+  /* مستطیل اولیه که همیشه دیده می‌شود */
+  <div class="filter-header" onclick="toggleFilters()">
+    <span>🔍 فیلتر و مرتب‌سازی</span>
+    <span class="arrow-icon" id="filterArrow">▼</span>
+  </div>
+
+  /* محتوایی که قرار است مخفی باشد و با کلیک باز شود */
+  <div class="filter-content" id="filterContent">
+    <div class="filter-row">
+      </div>
+  </div>
+
+</div>
   <!-- FILTER -->
   <div class="filter-card">
     <div class="filter-card-title">
@@ -941,6 +1009,18 @@ function setPos(v) {
   document.getElementById('posB').className = 'pos-opt buy' + (v === 'buy' ? ' active' : '');
   document.getElementById('posS').className = 'pos-opt sell' + (v === 'sell' ? ' active' : '');
   calcPnl();
+}
+
+// ========== toggleFilters ==========
+  function toggleFilters() {
+    const content = document.getElementById('filterContent');
+    const header = document.querySelector('.filter-header');
+    
+    // باز و بسته کردن باکس فیلتر
+    content.classList.toggle('active');
+    
+    // چرخاندن فلش
+    header.classList.toggle('active');
 }
 
 // ========== PASSWORD PROTECTION ==========
