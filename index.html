@@ -708,27 +708,24 @@ footer a:hover { color: var(--purple-mid); }
     </div>
   </div>
 
+ 
+  <!-- FILTER -->
   <div class="filter-wrapper">
   
- 
-  <div class=" filter-card-title filter-card" onclick="toggleFilters()">
+  <div class="filter-card-title filter-card" onclick="toggleFilters()">
     <span>🔍 فیلتر و مرتب‌سازی</span>
     <span class="arrow-icon" id="filterArrow">▼</span>
   </div>
 
- 
- 
   <div class="filter-content" id="filterContent">
     <div class="filter-row">
-      
-      <span style="cursor:pointer;font-size:0.75rem;color:var(--text-muted)" onclick="resetFilters()">پاک‌سازی ×</span>
-    </div>
-    <div class="filter-row">
       <input type="text" class="fi" id="fSymbol" placeholder="نماد — مثلاً Daw" oninput="render()">
+      
       <div class="filter-row-2">
         <input type="text" class="fi" id="fDateFrom" placeholder="از تاریخ " oninput="render()">
         <input type="text" class="fi" id="fDateTo"   placeholder="تا تاریخ " oninput="render()">
       </div>
+      
       <div>
         <div style="font-size:0.72rem;font-weight:700;color:var(--text-muted);margin-bottom:6px">نوع پوزیشن</div>
         <div class="pos-tabs">
@@ -736,17 +733,14 @@ footer a:hover { color: var(--purple-mid); }
           <button class="tab-btn active" id="tabAll"  onclick="setTypeFilter('')">همه</button>
           <button class="tab-btn"        id="tabBuy"  onclick="setTypeFilter('buy')">خرید</button>
           <button class="tab-btn"        id="tabSell" onclick="setTypeFilter('sell')">فروش</button>
+          
+          <button class="tab-btn" id="tabReset" onclick="resetFilters()" style="color: var(--text-muted); border-color: rgba(0,0,0,0.1);">پاک‌سازی ×</button>
         </div>
       </div>
     </div>
-  </div>
- 
-      
-     
+  </div> 
 
 </div>
-  <!-- FILTER -->
-  
 
   <!-- TRADES -->
   <div class="trades-wrap" id="tradesList"></div>
