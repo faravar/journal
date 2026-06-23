@@ -1224,14 +1224,14 @@ function updateStats(list) {
   const wr      = all.length ? Math.round(profits.length / all.length * 100) : 0;
 
   const totalEl = document.getElementById('s_total');
-  totalEl.textContent = (total >= 0 ? '+' : '') + '$' + Math.round(Math.abs(total));
+  totalEl.textContent = (total >= 0 ? '' : '') + Math.round(Math.abs(total));
   totalEl.style.color = total >= 0 ? 'var(--green)' : 'var(--red)';
 
   document.getElementById('s_perf').textContent = total >= 0 ? 'عملکرد مثبت ✅' : 'عملکرد منفی ❌';
 
   document.getElementById('s_count').textContent = all.length;
   document.getElementById('s_wl').textContent = profits.length + ' سود / ' + losses.length + ' ضرر';
-  document.getElementById('s_maxloss').textContent = maxLoss ? '$' + Math.abs(maxLoss) + '-' : '$0';
+  document.getElementById('s_maxloss').textContent = maxLoss ? '' + Math.abs(maxLoss) + '' : '0';
   document.getElementById('s_wr').textContent = wr + '%';
   document.getElementById('s_wins').textContent = profits.length + ' معامله سودده';
 
