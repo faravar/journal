@@ -665,12 +665,8 @@ footer {
     <div class="card">
       <h2>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M18.4 8.6l-5.1 5.1-3-3-4.3 4.3"/></svg>
-        لیست پوزیشن‌ها
+         لیست پوزیشن‌های لایو 
       </h2>
-      <p class="card-sub">محاسبه‌شده از همان معاملات ثبت‌شده — حالت A (TP1 کامل) به‌عنوان نتیجه‌ی هر پوزیشن در نظر گرفته می‌شود.</p>
-
-      <p class="card-sub" style="margin:0 0 10px;">فقط معاملات با «نوع تست = Live» اینجا نمایش داده می‌شن — دقیقاً مثل ژورنال قدیمی.</p>
-
       <div class="kpi-grid" id="posKpis"></div>
 
       <div class="filter-bar" style="margin-top:6px;">
@@ -705,7 +701,7 @@ footer {
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
         تحلیل الگوی رفتاری
       </h2>
-      <p class="card-sub">بر اساس همان معاملات Live در تب پوزیشن‌ها محاسبه می‌شود.</p>
+      
       <div id="behaviorBody"></div>
     </div>
   </section>
@@ -813,7 +809,7 @@ function renderPositions(){
   if(rows.length===0){
     $('#posTableWrap').innerHTML = `<div class="empty-state">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M18.4 8.6l-5.1 5.1-3-3-4.3 4.3"/></svg>
-      <p>هنوز پوزیشن Live ثبت نشده</p><span>معامله‌ای رو با «نوع تست: Live» ثبت کن</span>
+       <p>هنوز پوزیشن Live ثبت نشده</p>
     </div>`;
     return;
   }
@@ -859,7 +855,7 @@ function renderBehavior(){
   if(liveClosed.length===0){
     body.innerHTML = `<div class="empty-state">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/></svg>
-      <p>هنوز پوزیشن Live بسته‌ای وجود نداره</p><span>وقتی چند معامله‌ی Live ثبت کنی، الگوهای رفتاری اینجا ظاهر می‌شه</span>
+      <p>هنوز پوزیشن Live بسته‌ای وجود نداره</p>
     </div>`;
     return;
   }
